@@ -57,5 +57,11 @@ function calculateDepartmentSalary(department) {
         }
         return totalCompanySalary;
         }
+//example calculate salary fro each department 
+company.departments.forEach(department=> {
+    const totalSalary = calculateDepartmentSalary(department);
+    console.log(`Total salary for ${department.departmentName}: ${totalSalary}`);
+
+});
 
 
