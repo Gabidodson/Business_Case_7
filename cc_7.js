@@ -49,3 +49,20 @@ name: "Donald Duck", salary: 55000, subordinates: []
     ]
 }
 
+//Recursive function to calculate salary for department
+function calculateDepartmentSalary(department) {
+     function calculateEmploeeSalary(employee) {
+        let totalSalary = employee.salary;
+
+        for (let subordinate of employee.subordinates) {
+            totalSalary += calculateEmploeeSalary (subordinate);
+        }
+        return totalSalary;
+     }
+     let totalDepartmentSalary = 0;
+     for (let employee of department.employees) {
+        totalDepartmentSalary += calculateEmploeeSalary(employee);
+     }
+     return totalDepartmentSalary;
+    }
+
